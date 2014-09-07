@@ -22,6 +22,10 @@
 		49F23C5C19BC7CB000086591 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F23C3B19BC7CB000086591 /* UIKit.framework */; };
 		49F23C6419BC7CB000086591 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49F23C6219BC7CB000086591 /* InfoPlist.strings */; };
 		49F23C6619BC7CB000086591 /* iBeaconExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F23C6519BC7CB000086591 /* iBeaconExampleTests.m */; };
+		49F23C7119BC9E9800086591 /* TrackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F23C7019BC9E9800086591 /* TrackVC.m */; };
+		49F23C7419BC9EB400086591 /* TransmitVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F23C7319BC9EB400086591 /* TransmitVC.m */; };
+		49F23C7719BCA5B800086591 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F23C7619BCA5B800086591 /* CoreBluetooth.framework */; };
+		49F23C7919BCA5C000086591 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F23C7819BCA5C000086591 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,12 @@
 		49F23C6119BC7CB000086591 /* iBeaconExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iBeaconExampleTests-Info.plist"; sourceTree = "<group>"; };
 		49F23C6319BC7CB000086591 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		49F23C6519BC7CB000086591 /* iBeaconExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iBeaconExampleTests.m; sourceTree = "<group>"; };
+		49F23C6F19BC9E9800086591 /* TrackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackVC.h; sourceTree = "<group>"; };
+		49F23C7019BC9E9800086591 /* TrackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackVC.m; sourceTree = "<group>"; };
+		49F23C7219BC9EB400086591 /* TransmitVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransmitVC.h; sourceTree = "<group>"; };
+		49F23C7319BC9EB400086591 /* TransmitVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransmitVC.m; sourceTree = "<group>"; };
+		49F23C7619BCA5B800086591 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		49F23C7819BCA5C000086591 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49F23C7919BCA5C000086591 /* CoreLocation.framework in Frameworks */,
+				49F23C7719BCA5B800086591 /* CoreBluetooth.framework in Frameworks */,
 				49F23C3A19BC7CB000086591 /* CoreGraphics.framework in Frameworks */,
 				49F23C3C19BC7CB000086591 /* UIKit.framework in Frameworks */,
 				49F23C3819BC7CB000086591 /* Foundation.framework in Frameworks */,
@@ -103,6 +115,8 @@
 		49F23C3619BC7CB000086591 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49F23C7819BCA5C000086591 /* CoreLocation.framework */,
+				49F23C7619BCA5B800086591 /* CoreBluetooth.framework */,
 				49F23C3719BC7CB000086591 /* Foundation.framework */,
 				49F23C3919BC7CB000086591 /* CoreGraphics.framework */,
 				49F23C3B19BC7CB000086591 /* UIKit.framework */,
@@ -118,8 +132,7 @@
 				49F23C4719BC7CB000086591 /* AppDelegate.m */,
 				49F23C4919BC7CB000086591 /* Main_iPhone.storyboard */,
 				49F23C4C19BC7CB000086591 /* Main_iPad.storyboard */,
-				49F23C4F19BC7CB000086591 /* ViewController.h */,
-				49F23C5019BC7CB000086591 /* ViewController.m */,
+				49F23C7519BC9ED400086591 /* Controllers */,
 				49F23C5219BC7CB000086591 /* Images.xcassets */,
 				49F23C3E19BC7CB000086591 /* Supporting Files */,
 			);
@@ -153,6 +166,19 @@
 				49F23C6219BC7CB000086591 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49F23C7519BC9ED400086591 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				49F23C4F19BC7CB000086591 /* ViewController.h */,
+				49F23C5019BC7CB000086591 /* ViewController.m */,
+				49F23C6F19BC9E9800086591 /* TrackVC.h */,
+				49F23C7019BC9E9800086591 /* TrackVC.m */,
+				49F23C7219BC9EB400086591 /* TransmitVC.h */,
+				49F23C7319BC9EB400086591 /* TransmitVC.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +281,8 @@
 			files = (
 				49F23C5119BC7CB000086591 /* ViewController.m in Sources */,
 				49F23C4819BC7CB000086591 /* AppDelegate.m in Sources */,
+				49F23C7119BC9E9800086591 /* TrackVC.m in Sources */,
+				49F23C7419BC9EB400086591 /* TransmitVC.m in Sources */,
 				49F23C4419BC7CB000086591 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
