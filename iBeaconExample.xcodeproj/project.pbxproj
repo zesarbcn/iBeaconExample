@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49D10B9419C0E9E0009B72F8 /* TrackMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D10B9319C0E9E0009B72F8 /* TrackMapVC.m */; };
 		49F23C3819BC7CB000086591 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F23C3719BC7CB000086591 /* Foundation.framework */; };
 		49F23C3A19BC7CB000086591 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F23C3919BC7CB000086591 /* CoreGraphics.framework */; };
 		49F23C3C19BC7CB000086591 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F23C3B19BC7CB000086591 /* UIKit.framework */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49D10B9219C0E9E0009B72F8 /* TrackMapVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackMapVC.h; sourceTree = "<group>"; };
+		49D10B9319C0E9E0009B72F8 /* TrackMapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackMapVC.m; sourceTree = "<group>"; };
 		49F23C3419BC7CB000086591 /* iBeaconExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBeaconExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F23C3719BC7CB000086591 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		49F23C3919BC7CB000086591 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -177,6 +180,8 @@
 				49F23C7019BC9E9800086591 /* TrackVC.m */,
 				49F23C7219BC9EB400086591 /* TransmitVC.h */,
 				49F23C7319BC9EB400086591 /* TransmitVC.m */,
+				49D10B9219C0E9E0009B72F8 /* TrackMapVC.h */,
+				49D10B9319C0E9E0009B72F8 /* TrackMapVC.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -228,6 +233,13 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Cesar Perez Laguna";
 				TargetAttributes = {
+					49F23C3319BC7CB000086591 = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
 					49F23C5719BC7CB000086591 = {
 						TestTargetID = 49F23C3319BC7CB000086591;
 					};
@@ -280,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49F23C5119BC7CB000086591 /* ViewController.m in Sources */,
+				49D10B9419C0E9E0009B72F8 /* TrackMapVC.m in Sources */,
 				49F23C4819BC7CB000086591 /* AppDelegate.m in Sources */,
 				49F23C7119BC9E9800086591 /* TrackVC.m in Sources */,
 				49F23C7419BC9EB400086591 /* TransmitVC.m in Sources */,
@@ -498,6 +511,7 @@
 				49F23C6B19BC7CB000086591 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49F23C6C19BC7CB000086591 /* Build configuration list for PBXNativeTarget "iBeaconExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +520,7 @@
 				49F23C6E19BC7CB000086591 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--View Controller - iBeacon example-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhR-8E-HWB">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhR-8E-HWB">
                                 <rect key="frame" x="113" y="189" width="94" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Track Beacon">
@@ -26,7 +26,7 @@
                                     <segue destination="4aZ-F3-8Db" kind="push" id="aPs-lZ-bAC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhj-no-5YY">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhj-no-5YY">
                                 <rect key="frame" x="103" y="332" width="115" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Transmit Beacon">
@@ -36,10 +36,31 @@
                                     <segue destination="ZWH-YY-nSe" kind="push" id="JWp-ce-gxk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yM2-pE-gdd">
+                                <rect key="frame" x="96" y="256" width="129" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Track Map Beacon">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Cs4-YO-BTA" kind="push" id="h1G-bn-4kj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="xhR-8E-HWB" secondAttribute="trailing" constant="113" id="BLf-js-3n2"/>
+                            <constraint firstItem="xhR-8E-HWB" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="113" id="CNI-G4-l4u"/>
+                            <constraint firstItem="yhj-no-5YY" firstAttribute="top" secondItem="yM2-pE-gdd" secondAttribute="bottom" constant="46" id="Gqt-RD-hTh"/>
+                            <constraint firstItem="yM2-pE-gdd" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="96" id="MJZ-Ne-mtR"/>
+                            <constraint firstItem="xhR-8E-HWB" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="125" id="OWl-tc-7Sw"/>
+                            <constraint firstItem="yM2-pE-gdd" firstAttribute="top" secondItem="xhR-8E-HWB" secondAttribute="bottom" constant="37" id="T45-hU-ciU"/>
+                            <constraint firstAttribute="trailing" secondItem="yM2-pE-gdd" secondAttribute="trailing" constant="95" id="XZe-oa-KwS"/>
+                            <constraint firstAttribute="trailing" secondItem="yhj-no-5YY" secondAttribute="trailing" constant="102" id="bwX-Vn-e9R"/>
+                            <constraint firstItem="yhj-no-5YY" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="103" id="sCs-tL-nFH"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="lUu-31-J2I"/>
+                    <navigationItem key="navigationItem" title="iBeacon example" id="lUu-31-J2I"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -58,55 +79,55 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UUID:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRu-aJ-c4h">
-                                <rect key="frame" x="14" y="85" width="76" height="21"/>
+                                <rect key="frame" x="14" y="85" width="65" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Major:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3a-ht-Fjv">
-                                <rect key="frame" x="14" y="114" width="76" height="21"/>
+                                <rect key="frame" x="14" y="156" width="65" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Minor:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgQ-14-xEB">
-                                <rect key="frame" x="14" y="143" width="76" height="21"/>
+                                <rect key="frame" x="14" y="185" width="65" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Identity:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7S-CX-xjO">
-                                <rect key="frame" x="14" y="172" width="76" height="21"/>
+                                <rect key="frame" x="14" y="214" width="65" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQu-xb-70e">
-                                <rect key="frame" x="98" y="85" width="202" height="21"/>
+                                <rect key="frame" x="36" y="114" width="264" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNw-PC-EuB">
-                                <rect key="frame" x="98" y="114" width="202" height="21"/>
+                                <rect key="frame" x="87" y="156" width="213" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75m-Rs-6A0">
-                                <rect key="frame" x="98" y="143" width="202" height="21"/>
+                                <rect key="frame" x="87" y="185" width="213" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1G-PJ-3b9">
-                                <rect key="frame" x="98" y="172" width="202" height="21"/>
+                                <rect key="frame" x="87" y="214" width="213" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0f-YS-YT8">
-                                <rect key="frame" x="102" y="222" width="116" height="30"/>
+                                <rect key="frame" x="102" y="264" width="116" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Click to Tranamit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -129,6 +150,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jQm-51-aJS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1102" y="412"/>
+        </scene>
+        <!--Track MapVC-->
+        <scene sceneID="ISd-5Q-P6n">
+            <objects>
+                <viewController id="Cs4-YO-BTA" customClass="TrackMapVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cHG-6m-phz"/>
+                        <viewControllerLayoutGuide type="bottom" id="tsM-hD-aSZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PQu-yG-cLx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Pf7-Qa-rYg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cOp-OQ-88X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1102" y="-1049"/>
         </scene>
         <!--TrackVC-->
         <scene sceneID="GN3-y3-ep2">
